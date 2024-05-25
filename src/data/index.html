@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="font-awesome.css" />
     <link rel="stylesheet" href="bootstrap-switch.css" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="rangeslider.css" />
     <!--END GLOBAL STYLES -->
     <!-- PAGE LEVEL STYLES -->
     <link href="layout2.css" rel="stylesheet" />
@@ -163,6 +164,26 @@
     </div>
     <br>
     <!--END BLOCK SECTION -->
+    <hr />
+    <div class="col-lg-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <i class="icon-info-sign"></i> Ajuste del brillo
+                <span class="label label-success pull-right">ESP32 | 11:22:33:44:55:66:77:88</span>
+            </div>
+            <div class="panel-body">
+                <div class="container mt-5">
+                    <h1>Ajuste de la intensidad del brillo</h1>
+                    <div class="form-group">
+                      <label for="customRange">Desliza para ajustar:</label>
+                      <input type="range" class="form-range" id="customRange" min="10" max="100" value="50" oninput="updateSliderValue(this.value)">
+                      <div class="slider-value" id="sliderValue">50%</div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <hr />
     <div class="col-lg-12">
         <div class="panel panel-primary">
             <div class="panel-heading">
@@ -256,6 +277,7 @@
     <script src="modernizr-2.6.2.min.js"></script>
     <script src="bootstrap-switch.min.js"></script>
     <script src="scripts.js"></script>
+    <script src="get_slider.js"></script>
     <!-- END GLOBAL SCRIPTS -->
 </body>
 <!-- END BODY-->

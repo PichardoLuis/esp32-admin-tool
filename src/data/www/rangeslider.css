@@ -1,0 +1,15 @@
+
+
+/* GPT */
+.container {
+  max-width: 500px;
+  margin: 50px auto;
+  text-align: center;
+}
+.slider {
+  width: 100%;
+}
+#sliderValue {
+  margin-top: 10px;
+  font-size: 1.2em;
+}

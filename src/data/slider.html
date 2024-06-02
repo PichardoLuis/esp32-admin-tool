@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider Control</title>
+    <style>
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        .slider {
+            width: 100%;
+        }
+        #sliderValue {
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+    </style>
+    <script>
+        function sendSliderValue(value) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "/slider?value=" + value, true);
+            xhr.send();
+        }
+
+        window.onload = function() {
+            var slider = document.getElementById("brightnessSlider");
+            var output = document.getElementById("sliderValue");
+
+            // Mostrar el valor inicial del slider
+            output.innerHTML = slider.value + "%";
+
+            // Actualizar el valor mostrado y enviar datos al mover el slider
+            slider.oninput = function() {
+                output.innerHTML = this.value + "%";
+                sendSliderValue(this.value);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Control de Brillo del LED</h2>
+        <label for="brightnessSlider">Brillo:</label>
+        <input type="range" class="slider" id="brightnessSlider" min="0" max="100" value="50">
+        <div id="sliderValue"></div>
+    </div>
+</body>
+</html>
